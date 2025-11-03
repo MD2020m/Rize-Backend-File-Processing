@@ -1,7 +1,8 @@
 const fs = require('fs');
 
 // Counts the number of words in a string
-function CountWords(str) {
+function CountWords(filename) {
+    const str = fs.readFileSync(filename, 'utf8');
     let words = str.split(' ');
     for (let i = 0; i < words.length; i++) {
         if (words[i].length == 0){
@@ -13,7 +14,8 @@ function CountWords(str) {
 }
 
 // Finds longest word in a string
-function LongestWord(str) {
+function LongestWord(filename) {
+    const str = fs.readFileSync(filename, 'utf8');
     let words = str.split(' ');
     let longest = '';
     for (let i = 0; i < words.length; i++) {
@@ -39,8 +41,8 @@ module.exports = {
     CountLines
 }
 
-content = fs.readFileSync("./data/sample-text.txt");
+filename = "./data/sample-text.txt";
 
-console.log(CountWords("Hello world test"));
-console.log(LongestWord("Hi All, Antiquity"));
-console.log(CountLines("./data/quotes.txt"))
+console.log(CountWords(filename));
+console.log(LongestWord(filename));
+console.log(CountLines(filename));
