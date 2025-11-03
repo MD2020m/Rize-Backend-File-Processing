@@ -50,3 +50,9 @@ function CalculateAverage(filename) {
 console.log(Sum("./data/sample-numbers.txt"));
 console.log(MinMax("./data/sample-numbers.txt"));
 console.log(CalculateAverage("./data/sample-numbers.txt"));
+
+module.exports = {
+    Sum,
+    MinMax,
+    CalculateAverage
+}
